@@ -1,8 +1,6 @@
 version: 2.1
 commands:
   destroy_environments:
-    docker:
-      - image: amazon/aws-cli
     steps:
       - run:
           name: Destroy environment
@@ -64,6 +62,7 @@ jobs:
   smoke-test-error:
     docker:
       - image: alpine:latest
+      - image: amazon/aws-cli
     steps:
       - run: 
           name: Test Error
